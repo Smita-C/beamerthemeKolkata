@@ -1,0 +1,26 @@
+\mode<presentation>
+\definecolor{Kolkatabg}{RGB}{249,248,235}
+\definecolor{Kolkatafg}{RGB}{135, 34, 66}
+\definecolor{Kolkatatxt}{cmyk}{0, 0.7808, 0.4429, 0.1412}
+\definecolor{mygray}{gray}{0.6}
+
+% Frame title
+\defbeamertemplate*{frametitle}{Kolkata}[1][]
+{
+\vskip1cm%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+  \begin{tikzpicture}
+  \useasboundingbox[fill=Kolkatabg](0,0) rectangle(\the\paperwidth,1.2);
+  \fill[Kolkatafg] (0,0) rectangle(2.95,1.2);
+  \fill[Kolkatabg] (3.05,0) rectangle(\the\paperwidth,1.2);
+   \ifx\insertframesubtitle\@empty%
+      {\node[anchor=west, Kolkatafg,font=\large] at (3.2,0.61){\insertframetitle};}
+      \else%
+      {\node[anchor= west, Kolkatafg,font=\large] at (3.2,0.81){\insertframetitle};%
+       \node[anchor= west, Kolkatafg,font=\small] at (3.2,0.41){\insertframesubtitle};}%
+      \fi
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>

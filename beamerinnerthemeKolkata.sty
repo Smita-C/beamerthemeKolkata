@@ -1,0 +1,50 @@
+\mode<presentation>
+
+\definecolor{Kolkatabg}{RGB}{249,248,235}
+\definecolor{Kolkatafg}{RGB}{135, 34, 66}
+\definecolor{Kolkatatxt}{cmyk}{0, 0.7808, 0.4429, 0.1412}
+\definecolor{mygray}{gray}{0.6}
+ 
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[color=Kolkatafg] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+  \fill[color=Kolkatabg] (0,0) rectangle(\the\paperwidth,1.9);
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+}
+\setbeamertemplate{headline}{}
+\addtobeamertemplate{headline}{}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=19pc,left]{}
+ \includegraphics[width=2cm]{figures/logo_LU.png}
+  \end{beamercolorbox}}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=19pc,right]{}
+ \includegraphics[width=2cm]{figures/PYTHIA_logo.png}
+  \end{beamercolorbox}%
+  \vskip0pt%
+}
+% Title page
+\defbeamertemplate*{title page}{Kolkata}[1][]
+{ 
+   \vskip6cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+}
+
+\mode
+<all>
